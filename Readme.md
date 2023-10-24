@@ -9,23 +9,30 @@
 2. Склонируйте репозиторий:
 
 ```bash
-git clone <URL-вашего-репозитория>
-cd your-project-directory
+git clone https://github.com/Em5ty/test_it_factory
+cd store_visit
+```
 
+Запустите приложение с помощью Docker Compose:
 
-    Запустите приложение с помощью Docker Compose:
-
-bash
-
+```bash
 docker-compose up --build
+```
 
     Примените миграции:
 
-bash
-
+```bash
 docker-compose run web python manage.py migrate
+```
+
+    Создайте суперпользователя:
+
+```bash
+docker-compose exec web python manage.py createsuperuser
+```
 
 API будет доступно по адресу http://localhost:8000/.
+
 Использование
 
     После запуска проекта, вы можете зайти в админку Django, чтобы создать и редактировать записи о сотрудниках, торговых точках и посещениях. Админка доступна по адресу http://localhost:8000/admin/.
